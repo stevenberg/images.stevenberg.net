@@ -1,0 +1,16 @@
+services:
+  imagor:
+    image: shumc/imagor:latest
+    environment:
+      PORT: "${PORT}"
+      IMAGOR_SECRET: "${IMAGOR_SECRET}"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "${AWS_REGION}"
+      S3_ENDPOINT: "${S3_ENDPOINT}"
+      S3_LOADER_BUCKET: "${S3_LOADER_BUCKET}"
+      S3_STORAGE_BUCKET: "${S3_STORAGE_BUCKET}"
+      S3_RESULT_STORAGE_BUCKET: "${S3_RESULT_STORAGE_BUCKET}"
+      S3_RESULT_STORAGE_BASE_DIR: "${S3_RESULT_STORAGE_BASE_DIR}"
+    ports:
+      - "${PORT}:${PORT}"

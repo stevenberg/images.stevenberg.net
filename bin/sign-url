@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const crypto = require('crypto')
+
+const [secret, path] = process.argv.slice(2)
+
+const hash = crypto.createHmac('sha1', secret)
+  .update(path)
+  .digest('base64')
+  .replace(/\+/g, '-').replace(/\//g, '_')
+
+console.log(`${hash}/${path}`)
